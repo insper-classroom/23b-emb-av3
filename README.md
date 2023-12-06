@@ -89,8 +89,10 @@ Onde:
 
 ### Dicas
 
-1. Comece implementando a task_color. Implemente a lógica para detectar quando o botão está pressionado, lembrando de ler o dado na fila xQueueBtn.
-     - Acenda o LED específico do botão enquanto ele estiver pressionado.
-1.Implemente a leitura do AFEC e a leitura do dado na task_color (via a fila xQueueAFEC).
+1. Comece implementando a `task_color`. Implemente a lógica para detectar quando o botão está pressionado, lembrando de ler o dado na fila `xQueueBtn`.
+    - Acenda o LED específico do botão enquanto ele estiver pressionado.
+1. Implemente a leitura do AFEC e a leitura do dado na task_color (via a fila `xQueueAFEC`).
 1. Escolha três pinos e conecte o LED neles, lembrando de configurar os pinos como saída. Também conecte o pino de negativo no GND.
-1. Implemente a task_led_r e faça ela controlar, via PWM, o LED vermelho.
+1. Implemente a `task_led_r` e faça ela controlar, via PWM, o LED vermelho.
+    - Envie dados para a fila do LED vermelho e teste.
+1.  Implemente as outras cores.
