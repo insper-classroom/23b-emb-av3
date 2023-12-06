@@ -75,11 +75,17 @@ extern void vApplicationMallocFailedHook(void) {
 /* handlers / callbacks                                                 */
 /************************************************************************/
 
-void but1_callback(void) { printf("1 \n"); }
+void but1_callback(void) { 
+// printf("1 \n"); 
+}
 
-void but2_callback(void) { printf("2 \n"); }
+void but2_callback(void) { 
+// printf("2 \n"); 
+}
 
-void but3_callback(void) { printf("3 \n"); }
+void but3_callback(void) { 
+//  printf("3 \n"); 
+}
 
 /************************************************************************/
 /* TASKS                                                                */
