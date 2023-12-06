@@ -4,9 +4,9 @@ Prezado aluno:
 
 - A prova é prática, com o objetivo de avaliar sua compreensão a cerca do conteúdo da disciplina. 
 - É permitido consulta a todo material pessoal (suas anotações, códigos), lembre que você mas não pode consultar outros alunos.
-- Duração total: 3h (sem choro!)
+- Duração total: 3h (sem acréscimo!)
 
-Sobre a avaliacão:
+Sobre a avaliação:
 
 1. Você deve satisfazer ambos os requisitos: funcional e código para ter o aceite na avaliação;
 1. A avaliação de C deve ser feita em sala de aula por um dos membros da equipe (Professor ou Técnico);
@@ -16,8 +16,9 @@ Sobre a avaliacão:
 
 - ▶️ Kit SAME70-XPLD
 - ▶️ Conectar o OLED1 ao EXT-1
-- ▶️ Um Potenciômetro 
-- ▶️ Um LED RGB e resistores
+- ▶️ 1x Potenciômetro 
+- ▶️ 1x LED RGB (Cátodo Comum)
+- ▶️ 3x Resistor 330R
 
 **Periféricos que vai precisar utilizar:**
 
@@ -27,7 +28,7 @@ Sobre a avaliacão:
 
 **Código exemplo fornecido:**
 
-No código fornecido (e que deve ser utilizado) os botões e LEDs da placa OLED já foram inicializados na função (`io_init`) e os callbacks dos botões já estão configurados. Temos uma `task_oled` que é inicializada e fica exibindo no OLED um ponto piscando. Pedimos para **não mexer** nessa task, pois ela serve de debug para sabermos se seu programa travou (se parar de piscar tem alguma coisa errada com o seu programa).
+No código fornecido (e que deve ser utilizado) os botões e LEDs da placa OLED já foram inicializados na função (`io_init`) e os callbacks dos botões já estão configurados. Temos uma `task_oled` que é inicializada e fica exibindo no OLED um ponto piscando. Pedimos para **não alterar** nada nessa task, pois ela serve de debug para sabermos se o seu programa travou (se o ponto parar de piscar, tem alguma coisa errada com o seu programa).
 
 ## Descritivo
 #
@@ -41,7 +42,7 @@ O LED RGB é um componente eletrônico que possui, em um único encapsulamento, 
 
 ![](led.png)
 
-Cada pino do LED RGB deve então ser conectado a um pino do nosso microcontrolador, via o uso de um resistor (para limitarmos a corrente). Vocês devem tratar cada pino do LED como uma saída, assim como fazemos com qualquer LED! A figura a seguir fornece um esquema de ligação simplificado:
+Cada pino do LED RGB deve então ser conectado a um pino do nosso microcontrolador, utilizando um resistor (para limitarmos a corrente). Vocês devem tratar cada pino do LED como uma saída, assim como fazemos com qualquer LED! A figura a seguir fornece um esquema de ligação simplificado:
 
 ![](xpld.png)
 
@@ -65,7 +66,7 @@ while(1){
 
 ### Visão geral do firmware
 
-A funcionalidade esperada é a seguinte: Cada botão da placa OLED será usado para configurar a intensidade de uma das cores do LED RGB (botão 1 controla o vermelho, botão 2 o verde e o botão 3 o azul), um potenciômetro vai servir para ajustarmos a intensidade da cor. Enquanto o botão da cor específica estiver pressionado, o valor da intensidade vai ser proporcional ao valor lido no potenciômetro; quando liberado o botão, o valor fica fixo no último.
+A funcionalidade esperada é a seguinte: Cada botão da placa OLED será usado para configurar a intensidade de uma das cores do LED RGB, ou seja, o botão 1 controla o vermelho, botão 2 o verde e o botão 3 o azul. O potenciômetro vai servir para ajustarmos a intensidade da cor. Enquanto o botão da cor específica estiver pressionado, o valor da intensidade vai ser proporcional ao valor lido no potenciômetro, quando liberado o botão, o valor fica fixo no último.
 
 ![](diagrama.png)
 
