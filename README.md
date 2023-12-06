@@ -82,12 +82,14 @@ Onde:
 
 - `task_color`: Faz a leitura das informações dos botões e do AFEC, envia o dado do novo valor para cada uma das tasks específicas que controlam cada um dos LEDs, isso é feito via as filas.
 - `task_led_r`, `task_led_g`, `task_led_b`: Geram o PWM para cada um dos leds respectivos, fazem a leitura do valor do duty cycle via a fila específica.
-- `xQueueR`, `xQueueG`, `xQueueB`: Fila para receber os novos valores de duty
-
- cycle referente a cada cor.
+- `xQueueR`, `xQueueG`, `xQueueB`: Fila para receber os novos valores de duty cycle referente a cada cor.
 - `xQueueBtn`: Recebimento de dados dos botões (id e status).
 - `xQueueAFEC`: Recebimento do valor do AFEC.
 
 ### Dicas
 
-Comece pela `task_event` depois faça a `task_afec` e então a `task_alarm`.
+1. Comece implementando a task_color. Implemente a lógica para detectar quando o botão está pressionado, lembrando de ler o dado na fila xQueueBtn.
+     - Acenda o LED específico do botão enquanto ele estiver pressionado.
+1.Implemente a leitura do AFEC e a leitura do dado na task_color (via a fila xQueueAFEC).
+1. Escolha três pinos e conecte o LED neles, lembrando de configurar os pinos como saída. Também conecte o pino de negativo no GND.
+1. Implemente a task_led_r e faça ela controlar, via PWM, o LED vermelho.
